@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Loader2, Copy, Sparkles, Bug, Zap } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BACKEND_URL } from '../config';
 
 const AIPanel = ({ code }) => {
     const [response, setResponse] = useState('');
@@ -19,7 +20,7 @@ const AIPanel = ({ code }) => {
         setResponse('');
 
         try {
-            const res = await fetch('http://localhost:5001/ai', {
+            const res = await fetch(`${BACKEND_URL}/ai`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ code: code, action: selectedAction })

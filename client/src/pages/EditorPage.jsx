@@ -9,6 +9,7 @@ import AIPanel from '../components/AIPanel';
 import OutputPanel from '../components/OutputPanel';
 import { Panel, Group, Separator } from 'react-resizable-panels';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BACKEND_URL } from '../config';
 
 const ResizeHandle = () => (
     <Separator className="w-1 bg-[#0f172a] hover:bg-accent/80 transition-colors mx-0 cursor-col-resize flex items-center justify-center shrink-0 group">
@@ -195,7 +196,7 @@ const EditorPage = () => {
             setPlaybackIndex(0);
         } else {
             try {
-                const res = await fetch(`http://localhost:5001/history/${roomId}`);
+                const res = await fetch(`${BACKEND_URL}/history/${roomId}`);
                 const data = await res.json();
                 if (data.success && data.data.length > 0) {
                     setHistoryData(data.data);
@@ -227,7 +228,7 @@ const EditorPage = () => {
         setOutput('');
         
         try {
-            const response = await fetch('http://localhost:5001/run', {
+            const response = await fetch(`${BACKEND_URL}/run`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ code, language: selectedLanguage })
