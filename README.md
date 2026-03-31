@@ -1,130 +1,100 @@
-# 🚀 LiveCodeX — Real-Time Collaborative Code Editor
+LiveCodeX — Real-Time Collaborative Code Editor
 
-LiveCodeX is a full-stack real-time collaborative coding platform where multiple users can write, edit, and execute code together with AI assistance — similar to Google Docs but for coding.
+LiveCodeX is a full-stack real-time collaborative coding platform that allows multiple users to write, edit, and execute code together in a shared environment. It is designed to replicate a Google Docs–like experience for coding, enhanced with AI-powered assistance for debugging and suggestions.
 
----
+Live Demo
 
-## 🌐 Live Demo
+Frontend: https://livecodex-theta.vercel.app
 
-🔗 Frontend: https://livecodex-theta.vercel.app
-🔗 Backend: https://livecodex-13zk.onrender.com
+Backend: https://livecodex-13zk.onrender.com
 
----
+Overview
 
-## ✨ Features
+The platform enables users to join a shared room using a unique ID and collaborate in real time. Code changes are synchronized instantly across all connected users using WebSockets, ensuring a smooth and interactive coding experience.
 
-* 👨‍💻 Real-time collaborative code editor
-* ⚡ Multi-user live sync using WebSockets (Socket.io)
-* 🖱️ Live cursor tracking
-* 💬 Room-based chat system
-* ▶️ Code execution using Judge0 API
-* 🤖 AI assistant (Gemini) for debugging and suggestions
-* ⏱️ Coding session timer
-* 🎥 Playback system to replay coding sessions
-* 💾 Persistent storage using MongoDB
+It integrates code execution capabilities and AI assistance, allowing users to run code securely and receive intelligent suggestions during development.
 
----
+Features
+Real-time collaborative code editor
+Multi-user synchronization using WebSockets (Socket.io)
+Live cursor tracking for better collaboration visibility
+Room-based chat system
+Code execution via Judge0 API
+AI-powered debugging and suggestions using Gemini API
+Session timer for coding practice
+Playback system to replay coding sessions
+Persistent storage using MongoDB
+Tech Stack
 
-## 🏗️ Tech Stack
+Frontend
 
-### Frontend
+React.js
+Socket.io-client
+Tailwind CSS
 
-* React.js
-* Socket.io-client
-* Tailwind CSS
+Backend
 
-### Backend
+Node.js
+Express.js
+Socket.io
 
-* Node.js
-* Express.js
-* Socket.io
+Database
 
-### Database
+MongoDB Atlas
 
-* MongoDB Atlas
+APIs and Services
 
-### APIs & Services
+Judge0 API (code execution)
+Gemini API (AI assistance)
 
-* Judge0 API (Code Execution)
-* Gemini API (AI Assistant)
+Deployment
 
-### Deployment
-
-* Vercel (Frontend)
-* Render (Backend)
-
----
-
-## ⚙️ Installation & Setup
-
-### 1️⃣ Clone Repository
-
-```bash
+Vercel (Frontend)
+Render (Backend)
+Architecture
+Frontend handles UI, user interactions, and WebSocket communication
+Backend manages real-time synchronization, API requests, and business logic
+WebSockets enable instant code updates across all connected users
+Judge0 API handles secure code compilation and execution
+MongoDB stores session data and enables playback functionality
+Gemini API provides AI-driven code assistance and debugging
+Installation and Setup
+1. Clone the Repository
 git clone https://github.com/NerajRuwali/livecodex.git
 cd livecodex
-```
-
----
-
-### 2️⃣ Setup Backend
-
-```bash
+2. Backend Setup
 cd server
 npm install
-```
 
-Create a `.env` file in the `server` folder:
+Create a .env file in the server directory:
 
-```env
 PORT=5001
 MONGO_URI=your_mongodb_connection_string
 GEMINI_API_KEY=your_gemini_api_key
-```
 
-Run backend:
+Run the backend:
 
-```bash
 npm run dev
-```
-
----
-
-### 3️⃣ Setup Frontend
-
-```bash
+3. Frontend Setup
 cd client
 npm install
 npm run dev
-```
+API Overview
+/api/code – Code execution and processing
+/api/session – Session management and playback
+/api/chat – Chat functionality
+How It Works
+Users join a room using a unique Room ID
+Code changes are broadcast in real time using WebSockets
+Each keystroke is synchronized across all connected users
+Judge0 API compiles and executes code securely
+MongoDB stores session history for playback
+Gemini API assists with debugging and code suggestions
+Future Improvements
+Voice communication between users
+Video-based collaboration
+Code versioning and history tracking
+Enhanced analytics and session insights
+Author
 
----
-
-## 🧠 How It Works
-
-* Users join a room via a unique Room ID
-* WebSockets (Socket.io) sync code changes in real-time
-* Each keystroke is broadcasted to all connected users
-* Judge0 API compiles and runs code securely
-* MongoDB stores session history and enables playback
-* Gemini AI assists with code explanation and debugging
-
----
-
-## 🚀 Future Improvements
-
-* 🎤 Voice chat integration
-* 🧠 AI interview mode
-* 🌙 Dark/Light mode toggle
-* 📂 Code versioning system
-
----
-
-## 👨‍💻 Author
-
-**Neeraj Ruwali**
-
----
-
-## ⭐ Support
-
-If you like this project, give it a ⭐ on GitHub!
+Neeraj Ruwali
