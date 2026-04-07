@@ -2,14 +2,14 @@
 
 LiveCodex is a real-time, collaborative code learning platform where users can write, execute, and share code seamlessly. It features an interactive code editor, real-time synchronization, and an integrated chat system to facilitate pair programming and team discussions.
 
-## 🚀 Live Demo
+##  Live Demo
 
 - **Frontend Application:** [https://livecodex-theta.vercel.app](https://livecodex-theta.vercel.app)
 - **Backend API:** [https://livecodex-13zk.onrender.com](https://livecodex-13zk.onrender.com)
 
 > **Note:** The backend is hosted on a free tier on Render. If it has been idle, it might take a few moments (up to 50 seconds) to spin up for the first request.
 
-## ✨ Features
+##  Features
 
 - **Real-Time Collaboration:** Code together with peers in real-time, leveraging WebSockets (`socket.io`).
 - **Interactive Code Editor:** Built with Monaco Editor (`@monaco-editor/react`) for a VS Code-like coding experience.
